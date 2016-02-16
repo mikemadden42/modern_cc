@@ -1,4 +1,4 @@
-PROGRAMS = auto for lambda0 lambda1 null rvref shared smrtptrs unique weak
+PROGRAMS = auto for lambda0 lambda1 null rvref shared smrtptrs unique vector weak
 
 CC = clang++
 CFLAGS=-Wall -O2 -std=c++11 -march=native
