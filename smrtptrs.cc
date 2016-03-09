@@ -17,10 +17,6 @@ public:
 
 int main() {
   {
-    std::auto_ptr<Report> ps(new Report("using auto_ptr"));
-    ps->comment(); // use -> to invoke a member function
-  }
-  {
     std::shared_ptr<Report> ps(new Report("using shared_ptr"));
     ps->comment();
   }
