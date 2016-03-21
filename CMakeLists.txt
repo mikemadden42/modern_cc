@@ -7,6 +7,7 @@ add_definitions(-Wall -O2 -std=c++11 -march=native)
 set(PROGRAMS
     auto
     for
+    hello
     lambda0
     lambda1
     null
