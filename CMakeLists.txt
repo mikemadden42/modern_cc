@@ -13,6 +13,7 @@ set(PROGRAMS
     null
     rvref
     shared
+    size
     smrtptrs
     unique
     vector
