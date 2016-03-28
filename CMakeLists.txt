@@ -11,6 +11,7 @@ set(PROGRAMS
     lambda0
     lambda1
     null
+    read
     rvref
     shared
     size

@@ -2,9 +2,9 @@
 #include <iostream>
 
 int main() {
-  std::vector<std::vector<std::pair<int, int>>> nestedVector;
+  std::vector<std::vector<std::pair<int, int> > > nestedVector;
 
-  nestedVector.push_back(std::vector<std::pair<int, int>>());
+  nestedVector.push_back(std::vector<std::pair<int, int> >());
   nestedVector[0].push_back(std::make_pair(23, 42));
 
   for (auto it = nestedVector.begin(), end = nestedVector.end(); it != end;
