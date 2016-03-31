@@ -1,13 +1,22 @@
-#include <fstream>
-#include <iostream>
-#include <string>
+// https://rosettacode.org/wiki/Read_a_file_line_by_line
 
-int main() {
-  std::ifstream infile("input.txt");
+#include <fstream>
+#include <string>
+#include <iostream>
+
+int main(int argc, char **argv) {
+  int linecount = 0;
   std::string line;
-  while (std::getline(infile, line)) {
-    std::cout << line << std::endl;
+  std::ifstream infile(argv[1]);
+
+  if (infile) {
+    while (getline(infile, line)) {
+      std::cout << linecount << ": " << line << std::endl;
+      linecount++;
+    }
   }
+
+  infile.close();
 
   return 0;
 }

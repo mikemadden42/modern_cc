@@ -16,6 +16,7 @@ set(PROGRAMS
     shared
     size
     smrtptrs
+    token
     unique
     vector
     weak
