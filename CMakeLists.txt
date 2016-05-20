@@ -16,6 +16,7 @@ set(PROGRAMS
     shared
     size
     smrtptrs
+    sysinfo
     token
     unique
     vector
