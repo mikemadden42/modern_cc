@@ -5,6 +5,7 @@ project(modern_cc CXX)
 add_definitions(-Wall -O2 -std=c++11 -march=native)
 
 set(PROGRAMS
+    atomic
     auto
     for
     hello
@@ -23,7 +24,9 @@ set(PROGRAMS
     weak
     )
 
+find_package(Threads REQUIRED)
+
 foreach(program ${PROGRAMS})
   add_executable(${program} ${program}.cc)
-  target_link_libraries(${program} ${CORELIBS})
+  target_link_libraries(${program} ${CORELIBS} ${CMAKE_THREAD_LIBS_INIT})
 endforeach(program)
