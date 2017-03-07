@@ -1,4 +1,4 @@
-PROGRAMS = auto for hello lambda0 lambda1 null read rvref shared size smrtptrs token unique vector weak
+PROGRAMS = atomic auto for hello lambda0 lambda1 null read rvref shared size smrtptrs sysinfo token unique vector weak
 
 CC = g++
 CFLAGS=-Wall -O2 -std=c++11 -march=native
