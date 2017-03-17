@@ -3,7 +3,7 @@
 #include <thread>
 #include <unistd.h>
 
-int main(int argc, char const *argv[]) {
+int main() {
   char name[_POSIX_HOST_NAME_MAX + 1];
   gethostname(name, sizeof(name));
   std::cout << "Host name: " << name << std::endl;

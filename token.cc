@@ -7,7 +7,7 @@
 #include <iostream>
 #include <algorithm>
 
-int main(int argc, char **argv) {
+int main() {
   std::string s = "Hello,How,Are,You,Today";
   std::vector<std::string> v;
   std::istringstream buf(s);

@@ -6,7 +6,7 @@ std::atomic<int> a{0};
 
 void thread() { ++a; }
 
-int main(int argc, char const *argv[]) {
+int main() {
   std::thread t1{thread};
   std::thread t2{thread};
   t1.join();
