@@ -12,12 +12,12 @@ int main() {
   using std::cout;
   std::vector<int> numbers(Size);
 
-  std::srand(std::time(0));
+  std::srand((int)std::time(0));
   std::generate(numbers.begin(), numbers.end(), std::rand);
   cout << "Sample size = " << Size << '\n';
 
   // using lambdas
-  int count3 = std::count_if(numbers.begin(), numbers.end(),
+  size_t count3 = std::count_if(numbers.begin(), numbers.end(),
                              [](int x) { return x % 3 == 0; });
   cout << "Count of numbers divisible by 3: " << count3 << '\n';
   int count13 = 0;

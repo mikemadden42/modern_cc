@@ -18,15 +18,15 @@ int main() {
   using std::cout;
   std::vector<int> numbers(Size1);
 
-  std::srand(std::time(0));
+  std::srand((int)std::time(0));
   std::generate(numbers.begin(), numbers.end(), std::rand);
 
   // using function pointers
   cout << "Sample size = " << Size1 << '\n';
 
-  int count3 = std::count_if(numbers.begin(), numbers.end(), f3);
+  size_t count3 = std::count_if(numbers.begin(), numbers.end(), f3);
   cout << "Count of numbers divisible by 3: " << count3 << '\n';
-  int count13 = std::count_if(numbers.begin(), numbers.end(), f13);
+  size_t count13 = std::count_if(numbers.begin(), numbers.end(), f13);
   cout << "Count of numbers divisible by 13: " << count13 << "\n\n";
 
   // increase number of numbers
