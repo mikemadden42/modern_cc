@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-inline double f(double tf) { return 5.0 * (tf - 32.0) / 9.0; };
+inline double f(double tf) { return 5.0 * (tf - 32.0) / 9.0; }
 
 int main() {
     using namespace std;
