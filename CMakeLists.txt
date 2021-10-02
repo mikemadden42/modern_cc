@@ -4,7 +4,7 @@ project(modern_cc CXX)
 
 set (CMAKE_CXX_STANDARD 14)
 if (NOT MSVC)
-  set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic -march=native")
+  set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic")
 endif()
 
 set(PROGRAMS
