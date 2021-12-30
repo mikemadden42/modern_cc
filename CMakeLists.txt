@@ -20,6 +20,7 @@ set(PROGRAMS
     shared
     size
     smrtptrs
+    space
     sysinfo
     token
     unique
