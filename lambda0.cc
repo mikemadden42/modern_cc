@@ -36,10 +36,10 @@ int main() {
 
     // using a functor
     class f_mod {
-      private:
+       private:
         int dv;
 
-      public:
+       public:
         f_mod(int d = 1) : dv(d) {}
         bool operator()(int x) { return x % dv == 0; }
     };
