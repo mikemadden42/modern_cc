@@ -6,6 +6,7 @@ namespace fs = std::filesystem;
 int main() {
     fs::space_info root = fs::space("/");
 
-    std::cout << "Free space: " << root.free << '\n'
-              << "Available space: " << root.available << '\n';
+    std::cout << "Free space: " << root.free << std::endl
+              << "Available space: " << root.available << std::endl
+              << "Total space: " << root.capacity << std::endl;
 }
