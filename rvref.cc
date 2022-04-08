@@ -1,4 +1,4 @@
-// rvref.cc -- simple uses of rvalue references
+// simple uses of rvalue references
 
 #include <iostream>
 

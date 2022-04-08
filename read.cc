@@ -5,14 +5,14 @@
 #include <string>
 
 int main() {
-    int linecount = 0;
+    int line_count = 0;
     std::string line;
     std::ifstream infile("read.cc");
 
     if (infile) {
         while (getline(infile, line)) {
-            std::cout << linecount << ": " << line << std::endl;
-            linecount++;
+            std::cout << line_count << ": " << line << std::endl;
+            line_count++;
         }
     }
 

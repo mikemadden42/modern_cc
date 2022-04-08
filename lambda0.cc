@@ -18,7 +18,7 @@ int main() {
     using std::cout;
     std::vector<int> numbers(Size1);
 
-    std::srand((int)std::time(0));
+    std::srand((int)std::time(nullptr));
     std::generate(numbers.begin(), numbers.end(), std::rand);
 
     // using function pointers
@@ -40,8 +40,8 @@ int main() {
         int dv;
 
        public:
-        f_mod(int d = 1) : dv(d) {}
-        bool operator()(int x) { return x % dv == 0; }
+        explicit f_mod(int d = 1) : dv(d) {}
+        bool operator()(int x) const { return x % dv == 0; }
     };
 
     count3 = std::count_if(numbers.begin(), numbers.end(), f_mod(3));

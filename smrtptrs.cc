@@ -3,14 +3,14 @@
 
 #include <iostream>
 #include <memory>
-#include <string>
+#include <utility>
 
 class Report {
    private:
     std::string str;
 
    public:
-    Report(const std::string s) : str(s) { std::cout << "Object created!\n"; }
+    explicit Report(std::string  s) : str(std::move(s)) { std::cout << "Object created!\n"; }
     ~Report() { std::cout << "Object deleted!\n"; }
     void comment() const { std::cout << str << "\n"; }
 };

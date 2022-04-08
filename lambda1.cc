@@ -12,7 +12,7 @@ int main() {
     using std::cout;
     std::vector<int> numbers(Size);
 
-    std::srand((int)std::time(0));
+    std::srand((int)std::time(nullptr));
     std::generate(numbers.begin(), numbers.end(), std::rand);
     cout << "Sample size = " << Size << '\n';
 
