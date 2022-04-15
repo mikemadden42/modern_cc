@@ -1,4 +1,4 @@
-// smrtptrs.cc -- using three kinds of smart pointers
+// demo using three kinds of smart pointers
 // requires support of C++11 shared_ptr and unique_ptr
 
 #include <iostream>
