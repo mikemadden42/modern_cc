@@ -1,9 +1,8 @@
 // lambda1.cc -- use captured variables
 
 #include <algorithm>
-#include <cmath>
-#include <ctime>
 #include <iostream>
+#include <random>
 #include <vector>
 
 const long Size = 390000L;
@@ -12,8 +11,9 @@ int main() {
     using std::cout;
     std::vector<int> numbers(Size);
 
-    std::srand((int)std::time(nullptr));
-    std::generate(numbers.begin(), numbers.end(), std::rand);
+    std::random_device rd;
+    std::mt19937 generator(rd());
+    std::generate(numbers.begin(), numbers.end(), generator);
     cout << "Sample size = " << Size << '\n';
 
     // using lambdas

@@ -10,7 +10,9 @@ class Report {
     std::string str;
 
    public:
-    explicit Report(std::string  s) : str(std::move(s)) { std::cout << "Object created!\n"; }
+    explicit Report(std::string s) : str(std::move(s)) {
+        std::cout << "Object created!\n";
+    }
     ~Report() { std::cout << "Object deleted!\n"; }
     void comment() const { std::cout << str << "\n"; }
 };
