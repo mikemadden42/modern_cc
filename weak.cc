@@ -4,7 +4,7 @@
 #include <memory>
 
 int main() {
-    std::shared_ptr<int> p1(new int(5));
+    auto p1 = std::make_shared<int>(5);
     std::weak_ptr<int> wp1 = p1;  // p1 owns the memory.
 
     {
@@ -15,7 +15,9 @@ int main() {
         }
     }  // p2 is destroyed. Memory is owned by p1.
 
-    p1.reset();  // Memory is deleted.
+    // The int is destroyed. With make_shared the object and control block
+    // share one allocation, which is freed once wp1 is gone too.
+    p1.reset();
 
     std::shared_ptr<int> p3 =
         wp1.lock();  // Memory is gone, so we get an empty shared_ptr.

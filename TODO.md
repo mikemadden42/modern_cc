@@ -48,13 +48,13 @@ Findings from a project review (2026-11-02). Everything compiles cleanly with
 
 ## Accuracy & modern C++ style
 
-- [ ] **README** says "Sample C++11 programs", but the build uses C++17
+- [x] **README** says "Sample C++11 programs", but the build uses C++17
       (`space.cc` needs `std::filesystem`).
-- [ ] Use `std::make_shared` / `std::make_unique` instead of raw `new` in
+- [x] Use `std::make_shared` / `std::make_unique` instead of raw `new` in
       `shared.cc`, `unique.cc`, `weak.cc` and `smrtptrs.cc`.
-- [ ] **`smrtptrs.cc`:** comment says "three kinds of smart pointers" but only
+- [x] **`smrtptrs.cc`:** comment says "three kinds of smart pointers" but only
       two are shown. Add `weak_ptr` or fix the comment.
-- [ ] Add missing `<string>` includes in `smrtptrs.cc` and `token.cc`.
+- [ ] Add missing `<string>` include in `token.cc` (`smrtptrs.cc` done).
 - [ ] Qualify ADL-reliant calls: `getline` in `read.cc` and `token.cc`, `copy`
       in `token.cc`.
 - [ ] **`lambda1.cc`:** `size_t count3` but `int count13`; make them consistent.

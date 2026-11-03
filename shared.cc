@@ -4,7 +4,7 @@
 #include <memory>
 
 int main() {
-    std::shared_ptr<int> p1(new int(5));
+    auto p1 = std::make_shared<int>(5);
     std::shared_ptr<int> p2 = p1;  // Both now own the memory.
 
     p1.reset();  // Memory still exists, due to p2.
