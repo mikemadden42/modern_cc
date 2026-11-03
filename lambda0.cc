@@ -1,7 +1,7 @@
 // lambda0.cc -- using lambda expressions
 
 #include <algorithm>
-#include <cmath>
+#include <functional>
 #include <iostream>
 #include <random>
 #include <vector>
@@ -30,7 +30,7 @@ int main() {
 
     std::random_device rd;
     std::mt19937 generator(rd());
-    std::generate(numbers.begin(), numbers.end(), generator);
+    std::generate(numbers.begin(), numbers.end(), std::ref(generator));
 
     // using function pointers
     cout << "Sample size = " << Size1 << '\n';
@@ -42,7 +42,7 @@ int main() {
 
     // increase number of numbers
     numbers.resize(Size2);
-    std::generate(numbers.begin(), numbers.end(), std::rand);
+    std::generate(numbers.begin(), numbers.end(), std::ref(generator));
     cout << "Sample size = " << Size2 << '\n';
 
     count3 = std::count_if(numbers.begin(), numbers.end(), f_mod(3));
@@ -52,7 +52,7 @@ int main() {
 
     // increase number of numbers again
     numbers.resize(Size3);
-    std::generate(numbers.begin(), numbers.end(), std::rand);
+    std::generate(numbers.begin(), numbers.end(), std::ref(generator));
     cout << "Sample size = " << Size3 << '\n';
 
     // using lambdas
