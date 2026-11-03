@@ -9,14 +9,15 @@ int main() {
     std::string line;
     std::ifstream infile("read.cc");
 
-    if (infile) {
-        while (getline(infile, line)) {
-            std::cout << line_count << ": " << line << std::endl;
-            line_count++;
-        }
+    if (!infile) {
+        std::cerr << "Unable to open read.cc" << std::endl;
+        return 1;
     }
 
-    infile.close();
+    while (getline(infile, line)) {
+        std::cout << line_count << ": " << line << std::endl;
+        line_count++;
+    }
 
     return 0;
 }

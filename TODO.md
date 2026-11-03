@@ -12,7 +12,7 @@ Findings from a project review (2026-11-02). Everything compiles cleanly with
 
 ## Build & CI
 
-- [ ] **CI test step is broken or does nothing.** `.github/workflows/cmake.yml`
+- [x] **CI test step is broken or does nothing.** `.github/workflows/cmake.yml`
       runs `ctest`, but `CMakeLists.txt` has no `enable_testing()` / `add_test()`.
       With CMake 4.4.5, `ctest` printed "No test configuration file found!" and
       exited 1. Add tests or remove the step:
@@ -33,7 +33,7 @@ Findings from a project review (2026-11-02). Everything compiles cleanly with
 - [ ] **Makefile:** `clean` should use `rm -f` and be marked `.PHONY`.
 - [ ] **Makefile / .gitignore:** in-source binaries aren't ignored, so `make`
       leaves the working tree dirty.
-- [ ] **CI:** update `actions/checkout@v3` to v4 or later.
+- [x] **CI:** update `actions/checkout@v3` to v4 or later.
 - [ ] **CI:** add an OS matrix (ubuntu, macos, windows) so the `MSVC` branch is tested.
 
 ## Bugs
@@ -41,7 +41,7 @@ Findings from a project review (2026-11-02). Everything compiles cleanly with
 - [ ] **`lambda0.cc`:** lines 45 and 55 still use `std::rand`, which isn't
       seeded and gives the same sequence on every run (`<cstdlib>` isn't
       included either). Pass `generator` instead. `<cmath>` is unused.
-- [ ] **`read.cc`:** opens `"read.cc"` by a relative path; run from `build/` it
+- [x] **`read.cc`:** opens `"read.cc"` by a relative path; run from `build/` it
       prints nothing and exits 0. Print an error and return non-zero when the
       file isn't found, or take the path as an argument. The `infile.close()`
       call is unnecessary.
