@@ -38,7 +38,7 @@ Findings from a project review (2026-11-02). Everything compiles cleanly with
 
 ## Bugs
 
-- [ ] **`lambda0.cc`:** lines 45 and 55 still use `std::rand`, which isn't
+- [x] **`lambda0.cc`:** lines 45 and 55 still use `std::rand`, which isn't
       seeded and gives the same sequence on every run (`<cstdlib>` isn't
       included either). Pass `generator` instead. `<cmath>` is unused.
 - [ ] **`read.cc`:** opens `"read.cc"` by a relative path; run from `build/` it
