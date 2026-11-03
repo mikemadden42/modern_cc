@@ -30,7 +30,11 @@ set(PROGRAMS
 
 find_package(Threads REQUIRED)
 
+enable_testing()
+
 foreach(program ${PROGRAMS})
   add_executable(${program} ${program}.cc)
   target_link_libraries(${program} ${CORELIBS} ${CMAKE_THREAD_LIBS_INIT})
+  add_test(NAME ${program} COMMAND ${program}
+           WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 endforeach(program)
