@@ -1,8 +1,9 @@
 // demo using three kinds of smart pointers
-// requires support of C++11 shared_ptr and unique_ptr
+// requires support of C++14 make_unique
 
 #include <iostream>
 #include <memory>
+#include <string>
 #include <utility>
 
 class Report {
@@ -19,12 +20,22 @@ class Report {
 
 int main() {
     {
-        std::shared_ptr<Report> ps(new Report("using shared_ptr"));
+        auto ps = std::make_shared<Report>("using shared_ptr");
         ps->comment();
     }
     {
-        std::unique_ptr<Report> ps(new Report("using unique_ptr"));
+        auto ps = std::make_unique<Report>("using unique_ptr");
         ps->comment();
+    }
+    {
+        std::weak_ptr<Report> wp;
+        {
+            auto ps = std::make_shared<Report>("using weak_ptr");
+            wp = ps;
+            if (auto locked = wp.lock()) locked->comment();
+        }
+        std::cout << "weak_ptr expired: " << std::boolalpha << wp.expired()
+                  << "\n";
     }
     return 0;
 }

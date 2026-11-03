@@ -1,2 +1,2 @@
 # modern_cc
-Sample C++11 programs
+Sample modern C++ (C++11 through C++17) programs
