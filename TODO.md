@@ -8,7 +8,7 @@ Findings from a project review (2026-11-02). Everything compiles cleanly with
 1. Fix the CI test step (see Build & CI).
 2. Use `generator` instead of `std::rand` in `lambda0.cc`.
 3. Switch smart-pointer samples to `make_shared` / `make_unique`; update README to C++17.
-4. Clean up Makefile and CMake (or drop the Makefile and keep only CMake).
+4. Clean up CMake and drop the Makefile (done).
 
 ## Build & CI
 
@@ -22,16 +22,16 @@ Findings from a project review (2026-11-02). Everything compiles cleanly with
         add_test(NAME ${program} COMMAND ${program} WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
       endforeach()
       ```
-- [ ] **CMake:** `${CORELIBS}` is never defined; remove it and use
+- [x] **CMake:** `${CORELIBS}` is never defined; remove it and use
       `Threads::Threads` instead of `${CMAKE_THREAD_LIBS_INIT}`.
-- [ ] **CMake:** `set(CMAKE_CXX_FLAGS ...)` overwrites flags the user passes in;
+- [x] **CMake:** `set(CMAKE_CXX_FLAGS ...)` overwrites flags the user passes in;
       use `add_compile_options(-Wall -Wextra -pedantic)`.
-- [ ] **CMake:** add `set(CMAKE_CXX_STANDARD_REQUIRED ON)` and
+- [x] **CMake:** add `set(CMAKE_CXX_STANDARD_REQUIRED ON)` and
       `set(CMAKE_CXX_EXTENSIONS OFF)`.
-- [ ] **Makefile:** `space` is missing from `PROGRAMS`, so only 17 of 18 programs build.
-- [ ] **Makefile:** use `CXX` / `CXXFLAGS` instead of `CC` / `CFLAGS`.
-- [ ] **Makefile:** `clean` should use `rm -f` and be marked `.PHONY`.
-- [ ] **Makefile / .gitignore:** in-source binaries aren't ignored, so `make`
+- [x] **Makefile:** `space` is missing from `PROGRAMS`, so only 17 of 18 programs build.
+- [x] **Makefile:** use `CXX` / `CXXFLAGS` instead of `CC` / `CFLAGS`.
+- [x] **Makefile:** `clean` should use `rm -f` and be marked `.PHONY`.
+- [x] **Makefile / .gitignore:** in-source binaries aren't ignored, so `make`
       leaves the working tree dirty.
 - [x] **CI:** update `actions/checkout@v3` to v4 or later.
 - [ ] **CI:** add an OS matrix (ubuntu, macos, windows) so the `MSVC` branch is tested.
@@ -66,5 +66,4 @@ Findings from a project review (2026-11-02). Everything compiles cleanly with
 ## Repo hygiene
 
 - [ ] Commit `.clang-format` and `.clang-tidy` so contributors and CI apply the same rules.
-- [ ] Trim the generic `.gitignore` template (Fortran, `.lai`, etc.) and add the
-      in-source binaries.
+- [ ] Trim the generic `.gitignore` template (Fortran, `.lai`, etc.).
