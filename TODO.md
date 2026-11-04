@@ -54,14 +54,14 @@ Findings from a project review (2026-11-02). Everything compiles cleanly with
       `shared.cc`, `unique.cc`, `weak.cc` and `smrtptrs.cc`.
 - [x] **`smrtptrs.cc`:** comment says "three kinds of smart pointers" but only
       two are shown. Add `weak_ptr` or fix the comment.
-- [ ] Add missing `<string>` include in `token.cc` (`smrtptrs.cc` done).
-- [ ] Qualify ADL-reliant calls: `getline` in `read.cc` and `token.cc`, `copy`
+- [x] Add missing `<string>` include in `token.cc` (`smrtptrs.cc` done).
+- [x] Qualify ADL-reliant calls: `getline` in `read.cc` and `token.cc`, `copy`
       in `token.cc`.
-- [ ] **`lambda1.cc`:** `size_t count3` but `int count13`; make them consistent.
-- [ ] **`rvref.cc`:** drop `using namespace std;`.
-- [ ] **`atomic.cc`:** rename the free function `thread`; it's confusing next to `std::thread`.
-- [ ] **`vector.cc`:** loops could use `const auto&`.
-- [ ] **`sysinfo.cc`:** `hardware_concurrency()` may return 0; add a comment or check.
+- [x] **`lambda1.cc`:** `size_t count3` but `int count13`; make them consistent.
+- [x] **`rvref.cc`:** drop `using namespace std;`.
+- [x] **`atomic.cc`:** rename the free function `thread`; it's confusing next to `std::thread`.
+- [x] **`vector.cc`:** loops could use `const auto&`.
+- [x] **`sysinfo.cc`:** `hardware_concurrency()` may return 0; add a comment or check.
 
 ## Repo hygiene
 

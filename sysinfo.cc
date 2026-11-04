@@ -2,8 +2,13 @@
 #include <thread>
 
 int main() {
+    // hardware_concurrency() returns 0 when the value can't be determined.
     unsigned int cores = std::thread::hardware_concurrency();
-    std::cout << "Total cores: " << cores << std::endl;
+    if (cores == 0) {
+        std::cout << "Total cores: unknown" << std::endl;
+    } else {
+        std::cout << "Total cores: " << cores << std::endl;
+    }
 
     return 0;
 }
