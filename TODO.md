@@ -65,5 +65,6 @@ Findings from a project review (2026-11-02). Everything compiles cleanly with
 
 ## Repo hygiene
 
-- [ ] Commit `.clang-format` and `.clang-tidy` so contributors and CI apply the same rules.
-- [ ] Trim the generic `.gitignore` template (Fortran, `.lai`, etc.).
+- [x] Commit `.clang-format` so contributors and CI apply the same rules. CI now
+      fails on unformatted code. (`.clang-tidy` skipped: not installed locally.)
+- [x] Trim the generic `.gitignore` template (Fortran, `.lai`, etc.).
