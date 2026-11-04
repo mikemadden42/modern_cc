@@ -4,11 +4,11 @@
 
 std::atomic<int> a{0};
 
-void thread() { ++a; }
+void increment() { ++a; }
 
 int main() {
-    std::thread t1{thread};
-    std::thread t2{thread};
+    std::thread t1{increment};
+    std::thread t2{increment};
     t1.join();
     t2.join();
     std::cout << a << std::endl;

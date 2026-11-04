@@ -14,7 +14,7 @@ int main() {
         return 1;
     }
 
-    while (getline(infile, line)) {
+    while (std::getline(infile, line)) {
         std::cout << line_count << ": " << line << std::endl;
         line_count++;
     }
