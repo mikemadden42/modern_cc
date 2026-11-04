@@ -34,7 +34,7 @@ Findings from a project review (2026-11-02). Everything compiles cleanly with
 - [x] **Makefile / .gitignore:** in-source binaries aren't ignored, so `make`
       leaves the working tree dirty.
 - [x] **CI:** update `actions/checkout@v3` to v4 or later.
-- [ ] **CI:** add an OS matrix (ubuntu, macos, windows) so the `MSVC` branch is tested.
+- [x] **CI:** add an OS matrix (ubuntu, macos, windows) so the `MSVC` branch is tested.
 
 ## Bugs
 
